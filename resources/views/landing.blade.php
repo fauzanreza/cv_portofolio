@@ -33,6 +33,16 @@
         background: #F5F5F5;
         overflow-x: hidden;
         font-family: 'Inter', sans-serif;
+        text-align: justify;
+        }
+        .container-fluid{
+            padding: 0 12%;
+        }
+        .container{
+            padding: 0 5%;
+        }
+        .row-cols-1 {
+            padding: 0 10%;
         }
         .btn-primary,
         .btn-primary:hover,
@@ -44,8 +54,7 @@
             font-weight: 500;
         }
         .welcome{
-            margin-top:7%;
-            padding-left: 10% !important;
+            padding: 2% 0;
         }
         a:link {
         text-decoration: none;
@@ -67,12 +76,12 @@
         } 
         
         .bi{
-            color: white !important;
-            margin: 0 10% 0 -5% !important;
+            
+            margin: 0 10% 0 0 !important;
         }
         .hc{
             font-family: 'Inter', sans-serif;
-            font-weight: bold;
+            font-weight: 600;
         }
         ul#footer-list li {
         display:inline;
@@ -245,7 +254,7 @@
     
     @media only screen and (min-width: 720px){
         main{
-        max-width: 1150px;
+        max-width: 1060px;
         margin-left: auto;
         margin-right: auto; 
         padding: 24px;
@@ -513,7 +522,17 @@
     }
     }
 
-    
+    .home{
+        background-image: url("{{asset('assets/computer.jpg')}}");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .overlayh{
+        background: linear-gradient(to bottom, rgba(33,33,33,0.5) -20%, #212121 100%);
+        padding-top: 5%;
+        position: relative;
+    }
         /* If the screen size is 601px or more, set the font-size of <div> to 80px */
         @media only screen and (min-width: 768px) {
         .navbar-nav{
@@ -527,13 +546,14 @@
         .bi{
             margin: 0 10% 0 -5% !important;
         }
+        .sosmed{
+            padding-left:10% !important;
+        }
         img.wave-down{
             position: absolute;
             margin-top:-90px !important;
         }
-        .inwave{
-            padding-bottom:130px !important;
-        }
+   
         }
 
         /* If the screen size is 600px or less, set the font-size of <div> to 30px */
@@ -548,12 +568,6 @@
         .pas{
             position: relative;
             top: 1% !important;
-        }
-        .bi{
-            margin: 0 0 0 0 !important;
-        }
-        ul .bi{
-            margin-left:12% !important;
         }
         img.wave-down{
             position: absolute;
@@ -577,9 +591,9 @@
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-cv text-center">
                             <li class="nav-item px-1"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-                            <li class="nav-item px-1"><a href="#experience"" class="nav-link text-dark">Experience</a></li>
-                            <li class="nav-item px-1"><a href="#project" class="nav-link text-dark">Project</a></li>
-                            <li class="nav-item px-1"><a href="#" class="nav-link text-dark">FAQs</a></li>                           
+                            <li class="nav-item px-1"><a href="#aboutme" class="nav-link" aria-current="page">About Me</a></li>
+                            <li class="nav-item px-1"><a href="#experience"" class="nav-link">Experience</a></li>
+                            <li class="nav-item px-1"><a href="#project" class="nav-link">Project</a></li>
                         </ul>
                         </div>
                         <div class="col-md text-end pe-3">
@@ -650,21 +664,22 @@
                                     </div>
                                 </div>
                                 </div>
-                <div class="container-fluid" style="background: #212121;">
-                    
-                    <div class="row">
+                <div class="home">
+                <div class="container-fluid text-center justify-content-center overlayh">
                         <div class="col-md welcome textread pt-5">
-                        <div class="col-md pb-5">
-                        <h1 class="text-white" style="font-size: 48px; font-weight: 500;">Fauzan Reza Arnanda</h1>
-                        <p class="text-white" style="font-size: 28px; font-weight: 500;">Software Engineering Student</p>
-                        </div>
                         <div class="col-md">
-                        <p class="text-white">
+                        <h1 class="text-white" style="font-size: 56px; font-weight: 500;">Fauzan Reza Arnanda</h1>
+                        <div class="col-md">
+                        <img class="rounded-circle img-fluid d-block mx-auto p-4" src="{{asset('assets/ozan-free.jpg')}}" alt=''style='width:25%;'>
+                        </div>
+                        <p class="text-white" style="font-size: 28px; font-weight: 500;">Software Engineering Student</p>
+                        <p class="text-white" style="padding: 0 3%;">
                             Saya adalah seorang mahasiswa software engineering
                             yang tertarik dengan pengembangan software, terutama
                             dalam bidang web development dan mobile development
                         </p>
                         </div>
+                        <div class="col-md sosmed">
                         <ul>
                             <a href="https://www.instagram.com/arz_co/?hl=id" target="_blank"><i class="bi bi-instagram text-white" data-bs-toggle="tooltip" data-bs-placement="left" title="Instagram | @arz_co"></i></a>
                             <a href="https://www.linkedin.com/in/fauzan-reza-arnanda-716bb122a/" target="_blank"><i class="bi bi-linkedin text-white" data-bs-toggle="tooltip" data-bs-placement="left" title="Linkedin"></i></a>
@@ -672,15 +687,10 @@
                             <i class="bi bi-discord text-white" data-bs-toggle="tooltip" data-bs-placement="left" title="Discord | fauzanreza#2082"></i>
                         </ul>
                         </div>
-                        <div class="col-md">
-                            <img class="pas" src="http://127.0.0.1:8000/assets/passhadwhite.png" alt='Fauzan Reza Arnanda'
-                                style='width:50%;'>
-                                <!-- <img class="rounded-circle img-fluid mb-3 pas " src="http://127.0.0.1:8000/assets/ozan.jpeg" alt=''
-                                                        style='width:45%;'> -->
                         </div>
-                    </div>
                 </div>
-                <img class="img-fluid" src="{{asset('assets/waveupgy.png')}}" alt='' width="100%">
+                </div>
+                <img class="img-fluid" id="aboutme" src="{{asset('assets/waveupgy.png')}}" alt='' width="100%">
 
                 <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
   <path fill="#4802fa" fill-opacity="1" d="M0,160L120,176C240,192,480,224,720,234.7C960,245,1200,235,1320,229.3L1440,224L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z" style="user-select: auto;"></path>
@@ -689,7 +699,7 @@
         <div class="col text-center fs-1 pt-4 hc">
             <p>About Me</p>
         </div>
-        <div class="row pt-3 justify-content-around p-2">
+        <div class="row pt-3 justify-content-around">
             <div class="col-md-5 textread">
                 <p>
                     Saya merupakan mahasiswa yang sedang mengemban
@@ -707,48 +717,8 @@
         </div>
         </div>
     </section>
-    <section class="p-3 mt-5">
-    
-    <!-- <div class="row d-flex justify-content-center align-items-center">
-        <div class="col-md-8">
-            <div class="card shadow-2-strong text-white" style="border-radius: 1rem; background: #9933ff;">
-                <div class="row text-center mt-4">
-                    <div class="col">
-                        <h1>Riwayat Pendidikan</h1>
-                    </div>
-                </div>
-                <div class="card-body text-center">
-                    <div class="row p-3 text-dark">
-                        <div class="col">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <div class="col text-center fs-1 mb-4 hc">
+   
+    <div class="col text-center fs-1 mb-4 pt-5 hc">
             <p>Riwayat Pendidikan</p>
         </div>
     <main class="mb-4 p-3">
@@ -845,7 +815,7 @@
         </div>
         <div class="container pb-2">
         <div class="row justify-content-around ">
-            <div class="col-md-5">
+            <div class="col-md">
             <div class="card rounded-3">
                 <div class="card-body textread">
                     <p>
@@ -854,7 +824,7 @@
                 </div>
             </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-md ">
             <div class="card rounded-3">
                 <div class="card-body textread">
                     <p>
@@ -949,61 +919,67 @@
     <section id="project">
     <img class="img-fluid" src="{{asset('assets/wavedngyexp.png')}}" alt='' width="100%">
     <div class="container-fluid p-5 inwave" style="background: #212121; margin-top: -8px;">
-        <div class="col text-center fs-1 pt-4 text-white ">
+        <div class="col text-center fs-1 pt-4 text-white hc">
             <p>Project</p>
         </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-            <div class="card h-100">
-            <img src="{{asset('assets/ferarri.png')}}" class="card-img-top" alt="">
-            <div class="card-body">
+        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center mt-5">
+        <div class="col-md-3 m-2">
+            <div class="card bg-dark text-white">
+            <img src="{{asset('assets/ferarri.png')}}" class="card-img" alt="..." style="background: #212121;  opacity: 0.5;">
+            <div class="card-img-overlay">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text">This is a wider card with supporting text</p>
+                <p class="card-text">Last updated 3 mins ago</p>
             </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card h-100">
-            <img src="{{asset('assets/ferarri.png')}}" class="card-img-top" alt="">
-            <div class="card-body">
+        <div class="col-md-3 m-2">
+            <div class="card bg-dark text-white">
+            <img src="{{asset('assets/ferarri.png')}}" class="card-img" alt="..." style="background: #212121;  opacity: 0.5;">
+            <div class="card-img-overlay">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a short card.</p>
+                <p class="card-text">This is a wider card with supporting text</p>
+                <p class="card-text">Last updated 3 mins ago</p>
             </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card h-100">
-            <img src="{{asset('assets/ferarri.png')}}" class="card-img-top" alt="">
-            <div class="card-body">
+        <div class="col-md-3 m-2">
+            <div class="card bg-dark text-white">
+            <img src="{{asset('assets/ferarri.png')}}" class="card-img" alt="..." style="background: #212121;  opacity: 0.5;">
+            <div class="card-img-overlay">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text">This is a wider card with supporting text</p>
+                <p class="card-text">Last updated 3 mins ago</p>
             </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card h-100">
-            <img src="{{asset('assets/ferarri.png')}}" class="card-img-top" alt="">
-            <div class="card-body">
+        <div class="col-md-3 m-2">
+            <div class="card bg-dark text-white">
+            <img src="{{asset('assets/ferarri.png')}}" class="card-img" alt="..." style="background: #212121;  opacity: 0.5;">
+            <div class="card-img-overlay">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text">This is a wider card with supporting text</p>
+                <p class="card-text">Last updated 3 mins ago</p>
             </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card h-100">
-            <img src="{{asset('assets/ferarri.png')}}" class="card-img-top" alt="">
-            <div class="card-body">
+        <div class="col-md-3 m-2">
+            <div class="card bg-dark text-white">
+            <img src="{{asset('assets/ferarri.png')}}" class="card-img" alt="..." style="background: #212121;  opacity: 0.5;">
+            <div class="card-img-overlay">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text">This is a wider card with supporting text</p>
+                <p class="card-text">Last updated 3 mins ago</p>
             </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card h-100">
-            <img src="{{asset('assets/ferarri.png')}}" class="card-img-top" alt="">
-            <div class="card-body">
+        <div class="col-md-3 m-2">
+            <div class="card bg-dark text-white">
+            <img src="{{asset('assets/ferarri.png')}}" class="card-img" alt="..." style="background: #212121;  opacity: 0.5;">
+            <div class="card-img-overlay">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text">This is a wider card with supporting text</p>
+                <p class="card-text">Last updated 3 mins ago</p>
             </div>
             </div>
         </div>
