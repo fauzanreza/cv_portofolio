@@ -582,18 +582,18 @@
   <body>
     <!-- <h1>Hello, world!</h1> -->
     <!-- #4802fa -->
-        <section>
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background:#fff;">
+        <header id="header">
+            <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top" style="background:#fff;">
                     <div class="container-fluid p-1">
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon text-dark"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-cv text-center">
-                            <li class="nav-item px-1"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-                            <li class="nav-item px-1"><a href="#aboutme" class="nav-link" aria-current="page">About Me</a></li>
-                            <li class="nav-item px-1"><a href="#experience"" class="nav-link">Experience</a></li>
-                            <li class="nav-item px-1"><a href="#project" class="nav-link">Project</a></li>
+                            <li class="nav-item px-1"><a href="#hero" class="nav-link scrollto" aria-current="page">Home</a></li>
+                            <li class="nav-item px-1"><a href="#aboutme" class="nav-link scrollto " aria-current="page">About Me</a></li>
+                            <li class="nav-item px-1"><a href="#experience"" class="nav-link scrollto ">Experience</a></li>
+                            <li class="nav-item px-1"><a href="#project" class="nav-link scrollto ">Project</a></li>
                         </ul>
                         </div>
                         <div class="col-md text-end pe-3">
@@ -604,9 +604,9 @@
                         </div>
                     </div>
                     </nav>
-    </section>
+    </header>
 
-    <section>
+    <section id="hero">
                 <!-- Modal -->
                 <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg">
@@ -690,11 +690,13 @@
                         </div>
                 </div>
                 </div>
-                <img class="img-fluid" id="aboutme" src="{{asset('assets/waveupgy.png')}}" alt='' width="100%">
+                <img class="img-fluid" src="{{asset('assets/waveupgy.png')}}" alt='' width="100%">
+    </section>
 
                 <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
   <path fill="#4802fa" fill-opacity="1" d="M0,160L120,176C240,192,480,224,720,234.7C960,245,1200,235,1320,229.3L1440,224L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z" style="user-select: auto;"></path>
 </svg> -->
+<section id="aboutme">
         <div class="container">
         <div class="col text-center fs-1 pt-4 hc">
             <p>About Me</p>
@@ -716,7 +718,6 @@
             </div>
         </div>
         </div>
-    </section>
    
     <div class="col text-center fs-1 mb-4 pt-5 hc">
             <p>Riwayat Pendidikan</p>
@@ -844,15 +845,12 @@
         </div>
         </div>
         <img class="img-fluid" src="{{asset('assets/wavedngy2.png')}}" alt='' width="100%">
-    </section>
-    <section>
-    <div class="container-fluid">
+        <div class="container-fluid">
         <div class="col text-center fs-1 pt-4 hc" style="margin: -100px;">
             <p>Experience</p>
         </div>
         </div>
-    </section>
-    <section class="timeline mt-5 pt-5">
+        <div class="timeline mt-5 pt-5">
         <ul>
           <li>
             <div>
@@ -915,7 +913,8 @@
             </div>
           </li>
         </ul>
-      </section>
+    </div>
+    </section>
     <section id="project">
     <img class="img-fluid" src="{{asset('assets/wavedngyexp.png')}}" alt='' width="100%">
     <div class="container-fluid p-5 inwave" style="background: #212121; margin-top: -8px;">
@@ -1075,6 +1074,164 @@
         window.addEventListener("resize", callbackFunc);
         window.addEventListener("scroll", callbackFunc);
         })();
+    </script>
+    
+    <script>
+(function() {
+  "use strict";
+
+  /**
+   * Easy selector helper function
+   */
+  const select = (el, all = false) => {
+    el = el.trim()
+    if (all) {
+      return [...document.querySelectorAll(el)]
+    } else {
+      return document.querySelector(el)
+    }
+  }
+
+  /**
+   * Easy event listener function
+   */
+  const on = (type, el, listener, all = false) => {
+    let selectEl = select(el, all)
+    if (selectEl) {
+      if (all) {
+        selectEl.forEach(e => e.addEventListener(type, listener))
+      } else {
+        selectEl.addEventListener(type, listener)
+      }
+    }
+  }
+
+  /**
+   * Easy on scroll event listener 
+   */
+  const onscroll = (el, listener) => {
+    el.addEventListener('scroll', listener)
+  }
+
+  /**
+   * Navbar links active state on scroll
+   */
+  let navbarlinks = select('#navbar .scrollto', true)
+  const navbarlinksActive = () => {
+    let position = window.scrollY + 200
+    navbarlinks.forEach(navbarlink => {
+      if (!navbarlink.hash) return
+      let section = select(navbarlink.hash)
+      if (!section) return
+      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+        navbarlink.classList.add('active')
+      } else {
+        navbarlink.classList.remove('active')
+      }
+    })
+  }
+  window.addEventListener('load', navbarlinksActive)
+  onscroll(document, navbarlinksActive)
+
+  /**
+   * Scrolls to an element with header offset
+   */
+  const scrollto = (el) => {
+    let header = select('#header')
+    let offset = header.offsetHeight
+
+    if (!header.classList.contains('header-scrolled')) {
+      offset -= 20
+    }
+
+    let elementPos = select(el).offsetTop
+    window.scrollTo({
+      top: elementPos - offset,
+      behavior: 'smooth'
+    })
+  }
+
+  /**
+   * Toggle .header-scrolled class to #header when page is scrolled
+   */
+  let selectHeader = select('#header')
+  if (selectHeader) {
+    const headerScrolled = () => {
+      if (window.scrollY > 100) {
+        selectHeader.classList.add('header-scrolled')
+      } else {
+        selectHeader.classList.remove('header-scrolled')
+      }
+    }
+    window.addEventListener('load', headerScrolled)
+    onscroll(document, headerScrolled)
+  }
+
+  /**
+   * Back to top button
+   */
+  let backtotop = select('.back-to-top')
+  if (backtotop) {
+    const toggleBacktotop = () => {
+      if (window.scrollY > 100) {
+        backtotop.classList.add('active')
+      } else {
+        backtotop.classList.remove('active')
+      }
+    }
+    window.addEventListener('load', toggleBacktotop)
+    onscroll(document, toggleBacktotop)
+  }
+
+  /**
+   * Mobile nav toggle
+   */
+  on('click', '.mobile-nav-toggle', function(e) {
+    select('#navbar').classList.toggle('navbar-mobile')
+    this.classList.toggle('bi-list')
+    this.classList.toggle('bi-x')
+  })
+
+  /**
+   * Mobile nav dropdowns activate
+   */
+  on('click', '.navbar .dropdown > a', function(e) {
+    if (select('#navbar').classList.contains('navbar-mobile')) {
+      e.preventDefault()
+      this.nextElementSibling.classList.toggle('dropdown-active')
+    }
+  }, true)
+
+  /**
+   * Scrool with ofset on links with a class name .scrollto
+   */
+  on('click', '.scrollto', function(e) {
+    if (select(this.hash)) {
+      e.preventDefault()
+
+      let navbar = select('#navbar')
+      if (navbar.classList.contains('navbar-mobile')) {
+        navbar.classList.remove('navbar-mobile')
+        let navbarToggle = select('.mobile-nav-toggle')
+        navbarToggle.classList.toggle('bi-list')
+        navbarToggle.classList.toggle('bi-x')
+      }
+      scrollto(this.hash)
+    }
+  }, true)
+
+  /**
+   * Scroll with ofset on page load with hash links in the url
+   */
+  window.addEventListener('load', () => {
+    if (window.location.hash) {
+      if (select(window.location.hash)) {
+        scrollto(window.location.hash)
+      }
+    }
+  });
+
+})()
     </script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
