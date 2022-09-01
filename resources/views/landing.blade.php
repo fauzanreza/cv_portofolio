@@ -665,29 +665,31 @@
                                 </div>
                                 </div>
                 <div class="home">
-                <div class="container-fluid text-center justify-content-center overlayh">
-                        <div class="col-md welcome textread pt-4">
-                        <div class="col-md">
-                        <h1 class="text-white" style="font-size: 56px; font-weight: 500;">Fauzan Reza Arnanda</h1>
-                        <div class="col-md">
-                        <img class="rounded-circle img-fluid d-block mx-auto p-4" src="{{asset('assets/ozan-free.jpg')}}" alt=''style='width:25%;'>
+                <div class="container-fluid text-center justify-content-center overlayh" style="padding-bottom: 4%;">
+                    <div class="row pb-5 justify-content-around" style="padding-top: 8%;">
+                        <div class="col-md-6 welcome textread pt-2">
+                            <h1 class="text-white" style="font-size: 56px; font-weight: 500;">Fauzan Reza Arnanda</h1>
+                            <p class="text-white" style="font-size: 28px; font-weight: 500;">Software Engineering Student</p>
+                            <p class="text-white" style="padding: 0 3%;">
+                                Saya adalah seorang mahasiswa software engineering
+                                yang tertarik dengan pengembangan software, terutama
+                                dalam bidang web development dan mobile development
+                            </p> 
+                            <div class="col-md sosmed">
+                            <ul>
+                                <a href="https://www.instagram.com/arz_co/?hl=id" target="_blank"><i class="bi bi-instagram text-white" data-bs-toggle="tooltip" data-bs-placement="left" title="Instagram | @arz_co"></i></a>
+                                <a href="https://www.linkedin.com/in/fauzan-reza-arnanda-716bb122a/" target="_blank"><i class="bi bi-linkedin text-white" data-bs-toggle="tooltip" data-bs-placement="left" title="Linkedin"></i></a>
+                                <a href="https://github.com/fauzanreza" target="_blank"><i class="bi bi-github text-white" data-bs-toggle="tooltip" data-bs-placement="left" title="GitHub | fauzanreza"></i></a>
+                                <i class="bi bi-discord text-white" data-bs-toggle="tooltip" data-bs-placement="left" title="Discord | fauzanreza#2082"></i>
+                            </ul>
+                            </div>
                         </div>
-                        <p class="text-white" style="font-size: 28px; font-weight: 500;">Software Engineering Student</p>
-                        <!-- <p class="text-white" style="padding: 0 3%;">
-                            Saya adalah seorang mahasiswa software engineering
-                            yang tertarik dengan pengembangan software, terutama
-                            dalam bidang web development dan mobile development
-                        </p> -->
+                        <div class="col-md-4">
+                            <div class="col-md">
+                                <img class="rounded-circle img-fluid d-block mx-auto p-4" src="{{asset('assets/ozan-free.jpg')}}" alt=''style='width:85%;'>
+                            </div>
                         </div>
-                        <div class="col-md sosmed">
-                        <ul>
-                            <a href="https://www.instagram.com/arz_co/?hl=id" target="_blank"><i class="bi bi-instagram text-white" data-bs-toggle="tooltip" data-bs-placement="left" title="Instagram | @arz_co"></i></a>
-                            <a href="https://www.linkedin.com/in/fauzan-reza-arnanda-716bb122a/" target="_blank"><i class="bi bi-linkedin text-white" data-bs-toggle="tooltip" data-bs-placement="left" title="Linkedin"></i></a>
-                            <a href="https://github.com/fauzanreza" target="_blank"><i class="bi bi-github text-white" data-bs-toggle="tooltip" data-bs-placement="left" title="GitHub | fauzanreza"></i></a>
-                            <i class="bi bi-discord text-white" data-bs-toggle="tooltip" data-bs-placement="left" title="Discord | fauzanreza#2082"></i>
-                        </ul>
-                        </div>
-                        </div>
+                    </div>
                 </div>
                 </div>
                 <img class="img-fluid" src="{{asset('assets/waveupgy.png')}}" alt='' width="100%">
