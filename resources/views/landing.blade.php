@@ -35,12 +35,7 @@
         font-family: 'Inter', sans-serif;
         text-align: justify;
         }
-        .container-fluid{
-            padding: 0 12%;
-        }
-        .container{
-            padding: 0 5%;
-        }
+       
         .row-cols-1 {
             padding: 0 10%;
         }
@@ -533,6 +528,35 @@
         padding-top: 10%;
         position: relative;
     }
+
+    .wrapper {
+        /*This part is important for centering*/
+        display: grid;
+        place-items: center;
+        }
+
+        .typing-demo {
+        width: 34ch;
+        animation: typing 3s steps(34), blink .5s step-end infinite alternate;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid;
+        border-color: white;
+        font-family: monospace;
+        font-size: 2em;
+        }
+
+        @keyframes typing {
+        from {
+            width: 0
+        }
+        }
+            
+        @keyframes blink {
+        50% {
+            border-color: transparent
+        }
+        }
         /* If the screen size is 601px or more, set the font-size of <div> to 80px */
         @media only screen and (min-width: 768px) {
         .navbar-nav{
@@ -547,13 +571,24 @@
             margin: 0 10% 0 -5% !important;
         }
         .sosmed{
-            padding-left:10% !important;
+            padding-left:0% !important;
+            display: inline;
         }
         img.wave-down{
             position: absolute;
             margin-top:-90px !important;
         }
    
+        }
+
+        .skill-item{
+            background: #FFF !important;
+            color: #000 !important;
+            font-weight: 500;
+            font-size: 20px;
+            border-radius: 1.25rem;
+            padding: 0.375rem 0.75rem;
+            line-height: 1.2;
         }
 
         /* If the screen size is 600px or less, set the font-size of <div> to 30px */
@@ -665,10 +700,14 @@
                                 </div>
                                 </div>
                 <div class="home">
-                <div class="container-fluid text-center justify-content-center overlayh" style="padding-bottom: 4%;">
-                    <div class="row pb-5 justify-content-around" style="padding-top: 8%;">
+                <div class="container-fluid text-center justify-content-center overlayh" style="padding: 4% 8%;">
+                    <div class="row pb-5 justify-content-around" style="padding-top: 12%;">
                         <div class="col-md-6 welcome textread pt-2">
-                            <h1 class="text-white" style="font-size: 56px; font-weight: 500;">Fauzan Reza Arnanda</h1>
+                            <div class="col-md wrapper">
+                                <div class="typing-demo">
+                                    <h1 class="text-white" style="font-size: 56px; font-weight: 500;">Fauzan Reza Arnanda</h1>
+                                </div>
+                            </div>
                             <p class="text-white" style="font-size: 28px; font-weight: 500;">Software Engineering Student</p>
                             <p class="text-white" style="padding: 0 3%;">
                                 Saya adalah seorang mahasiswa software engineering
@@ -699,11 +738,11 @@
   <path fill="#4802fa" fill-opacity="1" d="M0,160L120,176C240,192,480,224,720,234.7C960,245,1200,235,1320,229.3L1440,224L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z" style="user-select: auto;"></path>
 </svg> -->
 <section id="aboutme">
-        <div class="container">
+        <div class="container" style="padding: 0 8%;">
         <div class="col text-center fs-1 pt-4 hc">
             <p>About Me</p>
         </div>
-        <div class="row pt-3 justify-content-around">
+        {{-- <div class="row pt-3 justify-content-around">
             <div class="col-md-5 textread">
                 <p>
                     Saya merupakan mahasiswa yang sedang mengemban
@@ -718,6 +757,17 @@
             <div class="col-md-5 textread">
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium, quasi assumenda nesciunt doloribus error delectus at placeat explicabo temporibus quod. Veniam, debitis itaque sunt nostrum nesciunt illo dignissimos reprehenderit laborum dolore voluptatem nisi nam asperiores eaque accusamus et quos enim aliquid! Eaque iure.</p>
             </div>
+        </div> --}}
+        <div class="col-md pt-3 textread">
+            <p>
+                Saya merupakan mahasiswa yang sedang mengemban
+                pendidikan di Telkom University. Saya memiliki
+                ketertarikan di bidang pembuatan software, terutama
+                dengan apa yang terjadi di dalam software tersebut. Oleh
+                karena itu, saya selalu terbuka akan kritik dan selalu
+                mencari kesempatan untuk mendapatkan ilmu-ilmu baru
+                yang belum pernah saya ketahui sebelumnya.
+            </p>
         </div>
         </div>
    
@@ -812,29 +862,107 @@
     </section>
     <section id="experience">
         <img class="img-fluid" src="{{asset('assets/wavednsklgy.png')}}" alt='' width="100%">
-        <div class="container-fluid pb-5 inwave" style="background: #212121; margin-top: -8px;">
-        <div class="col text-center fs-1 mb-2 pb-2 pt-5 text-white hc" style="font-family: 'Inter', sans-serif;">
+        <div class="container-fluid pb-5 inwave" style="background: #212121; margin-top: -8px;" style="padding: 0 8%;">
+        <div class="col text-center fs-1 mb-3 pb-4 pt-5 text-white hc" style="font-family: 'Inter', sans-serif;">
             <p>SKILLS</p>
         </div>
         <div class="container pb-2">
-        <div class="row justify-content-around ">
-            <div class="col-md">
-            <div class="card rounded-3">
-                <div class="card-body textread">
-                    <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos fuga ratione quis facilis atque aperiam corrupti blanditiis ad natus eaque fugiat accusamus necessitatibus pariatur, laudantium excepturi modi labore non commodi, inventore suscipit! Minima sint alias rerum nam numquam suscipit pariatur est. Perferendis ratione quisquam odit!
-                    </p>
+        <div class="row justify-content-around p-3">
+            <div class="col-md-5 text-center">
+                <div class="col-md">
+                    <p class="text-white fs-2 fw-bolder">Coding</p>
+                </div>
+                <div class="col-md">
+                    <div class="row pt-3">
+                        <div class="col">
+                            <p class="skill-item">HTML</p>
+                        </div>
+                        <div class="col">
+                            <p class="skill-item">CSS</p>
+                        </div>
+                        <div class="col">
+                            <p class="skill-item">Javascript</p>
+                        </div>
+                        <div class="col">
+                            <p class="skill-item">PHP</p>
+                        </div>
+                        <div class="col">
+                            <p class="skill-item">MySQL</p>
+                        </div>
+                        <div class="col">
+                            <p class="skill-item">MongoDB</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-            <div class="col-md ">
-            <div class="card rounded-3">
-                <div class="card-body textread">
-                    <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos fuga ratione quis facilis atque aperiam corrupti blanditiis ad natus eaque fugiat accusamus necessitatibus pariatur, laudantium excepturi modi labore non commodi, inventore suscipit! Minima sint alias rerum nam numquam suscipit pariatur est. Perferendis ratione quisquam odit!
-                    </p>
+            <div class="col-md-5 text-center">
+                <div class="col-md">
+                    <p class="text-white fs-2 fw-bolder">Tools</p>
+                </div>
+                <div class="col-md">
+                    <div class="row pt-3">
+                        <div class="col">
+                            <p class="skill-item">Bootstrap</p>
+                        </div>
+                        <div class="col">
+                            <p class="skill-item">Bash</p>
+                        </div>
+                        <div class="col">
+                            <p class="skill-item">Git</p>
+                        </div>
+                        <div class="col">
+                            <p class="skill-item">Github</p>
+                        </div>
+                        <div class="col">
+                            <p class="skill-item">Gitlab</p>
+                        </div>
+                        <div class="col">
+                            <p class="skill-item">VS Code</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+           
+        </div>
+        <div class="row justify-content-around p-3 mt-4">
+            <div class="col-md-5 text-center">
+                <div class="col-md">
+                    <p class="text-white fs-2 fw-bolder">Familiar But Not Very Skilled</p>
+                </div>
+                <div class="col-md">
+                    <div class="row pt-3">
+                        <div class="col">
+                            <p class="skill-item">C++</p>
+                        </div>
+                        <div class="col">
+                            <p class="skill-item">JAVA</p>
+                        </div>
+                        <div class="col">
+                            <p class="skill-item">Docker</p>
+                        </div>
+                        <div class="col">
+                            <p class="skill-item">Flutter</p>
+                        </div>
+                        <div class="col">
+                            <p class="skill-item">Kubernetes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 text-center">
+                <div class="col-md">
+                    <p class="text-white fs-2 fw-bolder">Language</p>
+                </div>
+                <div class="col-md">
+                    <div class="row pt-3">
+                        <div class="col">
+                            <p class="skill-item">Indonesia</p>
+                        </div>
+                        <div class="col">
+                            <p class="skill-item">English</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- <div class="col-md-4">
             <div class="card rounded-3">
